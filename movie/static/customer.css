@@ -1,0 +1,8 @@
+div.main {
+	background-repeat:  no-repeat;
+    height: 650px;
+    width: 800px;
+    padding: 100px 0 0 0; 
+    margin-left: 500px;
+    margin-top: -500px;  
+}

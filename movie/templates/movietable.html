@@ -1,0 +1,34 @@
+{% load static %}
+<!doctype html> 
+<html> 
+	<head> 
+		<title>List of persons</title> 
+		<link rel="stylesheet" href="{% static 'border.css' %}">
+	</head> 
+	<body>
+		<table>
+			<tr>
+				<th>Id</th>
+				<th>Name</th>
+				<th>Price</th>
+				<th>Released_date</th>
+				<th>category</th>
+				<th></th>
+			</tr>
+			{% for item in movie %}
+			<tr>
+				<td> {{ item.id }} </td>
+				<td>{{ item.name }} </td>
+				<td> {{ item.price }} </td>
+				<td> {{ item.released_date }} </td>
+				<td> {{item.category}} </td>
+				<form action="/movie/delete/{{item.id}}" method="POST">
+					{% csrf_token %}
+					<td><button type='submit'>Delete</button>
+				</form>
+			</tr>
+			{% endfor%}
+		</table> 
+
+	</body> 
+</html>

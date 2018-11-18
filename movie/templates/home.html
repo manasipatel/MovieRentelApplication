@@ -1,0 +1,26 @@
+{% load static %}
+
+<!doctype html>
+<html>
+    <head>
+        <title>HomePage</title>
+        <link rel="stylesheet" href="{% static 'home.css' %}">
+    </head>
+    <body>
+    	<div class="container">
+            <div class="menu">
+                <a href="/movie/addmovie" target="frame">AddMovie</a>
+                <a href="/movie/addcustomer" target="frame">SignUp</a>
+                <a href="/movie/avalablemovie" target="frame">Movies</a>
+                <a href="/movie/rentedmovie" target="frame">Rented</a>
+                <a href="/movie/customer" target="frame">Customer</a>
+                <a href="/movie/assignmovie" target="frame">Assign</a>
+  
+            </div>
+            <iframe height="700" width="1500" name="frame" src='{% static "Movie.jpg" %}'></iframe>
+            <!-- <div class="main">
+               <img src = '{% static "Movie.jpg" %}'/> 
+            </div> -->
+        </div>
+    </body>
+</html>

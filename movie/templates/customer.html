@@ -1,0 +1,18 @@
+{% load static %}
+<!doctype html>
+<html>
+    <head>
+        <title>customer_form</title>
+        <link rel="stylesheet" href="{% static 'customer.css' %}">
+    </head>
+    <body>
+    	<form method="post">
+    	    {% csrf_token %}
+            {{form.as_p}}
+            <button type="submit">Submit</button>
+        </form>
+        <div class="main">
+               <img src = '{% static "Movie.jpg" %}'/> 
+        </div>
+    </body>
+</html>

@@ -1,0 +1,43 @@
+{% load static %}
+<!doctype html> 
+<html> 
+	<head> 
+		<title>List of persons</title> 
+		<link rel="stylesheet" href="{% static 'border.css' %}">
+	</head> 
+	<body>
+		<table>
+			<tr>
+				<th>Id</th>
+				<th>First_name</th>
+				<th>Last_name</th>
+				<th>Email_id</th>
+				<th>Phone_no</th>
+				<th>Address1</th>
+				<th>Address2</th>
+				<th>City</th>
+				<th>Zip_code</th>
+				<th>Country</th>
+				<th></th>
+			</tr>
+			{% for item in customer %}
+			<tr>
+				<td> {{ item.id }} </td>
+				<td>{{ item.first_name }} </td>
+				<td> {{ item.last_name }} </td>
+				<td> {{ item.email_id }} </td>
+				<td> {{item.phone_no}} </td>
+				<td> {{item.address1}} </td>
+				<td> {{item.address2}} </td>
+				<td> {{item.city}} </td>
+				<td> {{item.zip_code}} </td>
+				<td> {{item.country}} </td>
+				<form action="/movie/deletecustomer/{{item.id}}" method="POST">
+					{% csrf_token %}
+					<td><button type='submit'>Delete</button>
+				</form>
+			</tr>
+			{% endfor%}
+		</table> 
+	</body> 
+</html>
